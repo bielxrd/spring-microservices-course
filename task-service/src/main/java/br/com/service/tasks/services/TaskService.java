@@ -7,12 +7,14 @@ import br.com.service.tasks.dtos.TaskResponseDto;
 import br.com.service.tasks.entities.TaskEntity;
 import br.com.service.tasks.repositories.TaskRepository;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 
 @Log4j2
@@ -54,14 +56,22 @@ public class TaskService {
         List<TaskEntity> tasks = taskRepository.findTasksDueWithinDeadline(deadline);
 
         try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
-            for (TaskEntity task : tasks) {
-                executor.submit(() -> {
-                    NotificationRequestDTO notificationRequestDTO = new NotificationRequestDTO("Sua tarefa" + task.getTitle() + "está prestes a vencer!", task.getEmail());
-                    notificationClient.sendNotification(notificationRequestDTO);
-                    task.setNotified(true);
-                    taskRepository.save(task);
-                });
-            }
+                List<CompletableFuture<Void>> futures = tasks.stream()
+                        .map(task -> CompletableFuture.runAsync(() -> {
+                            NotificationRequestDTO notificationRequestDTO = new NotificationRequestDTO("Sua tarefa" + task.getTitle() + "está prestes a vencer!", task.getEmail());
+                            ResponseEntity<Void> response = notificationClient.sendNotification(notificationRequestDTO);
+                            task.setNotified(true);
+                            taskRepository.save(task);
+
+                            if (response.getStatusCode().is2xxSuccessful()) {
+                                log.info("Notification sent successfully for task id: {}", task.getId());
+                            } else {
+                                log.error("Failed to send notification for task id: {}", task.getId());
+                            }
+                        }, executor))
+                        .toList();
+
+                CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
         }
     }
 
