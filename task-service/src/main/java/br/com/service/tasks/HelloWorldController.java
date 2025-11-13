@@ -12,6 +12,15 @@ public class HelloWorldController {
 
     @GetMapping("/message")
     public String getMessage() {
+        if (message.equalsIgnoreCase("Hello world")) {
+            System.out.println("Default mesage detected");
+        } else if (message.equalsIgnoreCase("Hello from main service")) {
+            System.out.println("Main service message detected");
+        } else {
+            System.out.println("Custom message detected: " + message);
+        }
+
+
         return message;
     }
 }
