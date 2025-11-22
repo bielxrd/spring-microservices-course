@@ -1,0 +1,63 @@
+2025-11-13 01:37:16.342766-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:17.354272-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:35.699820-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13T10:00:00'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13T10:00:00'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:37.465732-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13T10:00:00'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13T10:00:00'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:38.136390-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13T10:00:00'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13T10:00:00'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:38.450032-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13T10:00:00'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13T10:00:00'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:38.654221-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13T10:00:00'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13T10:00:00'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:38.784858-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13T10:00:00'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13T10:00:00'
+WHERE ID = 1 [42000-232]
+2025-11-13 01:37:38.944706-03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TASKS \000d\000a\000d\000aupdate [*]TASKS\000d\000aset DUE_DATE = '2025-11-13T10:00:00'\000d\000aWHERE ID = 1"; SQL statement:
+SELECT * FROM TASKS 
+
+update TASKS
+set DUE_DATE = '2025-11-13T10:00:00'
+WHERE ID = 1 [42000-232]
